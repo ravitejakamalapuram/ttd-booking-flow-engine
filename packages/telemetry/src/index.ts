@@ -1,0 +1,2 @@
+export interface ExecutionEvent{sessionId:string;type:string;stepId?:string;at:number;durationMs?:number;error?:string;}
+export class LocalTelemetry{private events:ExecutionEvent[]=[];record(event:ExecutionEvent){this.events.push(event)}all(){return[...this.events]}summary(){const step=this.events.filter(e=>e.type==='step_succeeded');return{events:this.events.length,steps:step.length,totalStepMs:step.reduce((n,e)=>n+(e.durationMs??0),0),startedAt:this.events[0]?.at,endedAt:this.events.at(-1)?.at}}}
