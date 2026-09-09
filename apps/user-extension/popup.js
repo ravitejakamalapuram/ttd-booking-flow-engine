@@ -1,0 +1,7 @@
+const OWNER='ravitejakamalapuram',REPO='ttd-booking-flow-engine',BRANCH='main',RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
+const $=s=>document.querySelector(s);let tab,flows=[];
+async function getTab(){[tab]=await chrome.tabs.query({active:true,currentWindow:true});return tab}
+async function load(){try{const index=await fetch(`${RAW}flows/index.json`,{cache:'no-store'}).then(r=>r.json());const all=await Promise.all(index.flows.map(x=>fetch(RAW+x.path,{cache:'no-store'}).then(r=>r.json())));flows=all;$('#flow').innerHTML=all.map((f,i)=>`<option value="${i}" ${f.enabled?'':'disabled'}>${f.name} v${f.version}${f.enabled?'':' — draft'}</option>`).join('');$('#status').textContent=`${all.length} published flow(s) loaded.`}catch(e){$('#status').textContent=`Unable to load published flows: ${e.message}`}}
+$('#refresh').onclick=load;
+$('#run').onclick=async()=>{tab=await getTab();const flow=flows[Number($('#flow').value)];if(!flow)return;const r=await chrome.tabs.sendMessage(tab.id,{type:'RUN_FLOW',flow});$('#status').textContent=r?.ok?'Flow started.':'Unable to start flow.'};
+chrome.storage.local.get('lastSession').then(x=>{$('#session').textContent=x.lastSession?JSON.stringify(x.lastSession,null,2):'No session yet.'});getTab().then(t=>{$('#status').textContent=t?.url?.includes('ttdevasthanams.ap.gov.in')?'TTD page detected.':'Open the TTD portal first.';load()});
