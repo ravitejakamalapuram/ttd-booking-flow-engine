@@ -1,0 +1,11 @@
+{
+  "id":"ttd.special-entry-darshan",
+  "platform":"ttd",
+  "name":"TTD Special Entry Darshan",
+  "version":1,
+  "enabled":false,
+  "match":{"hosts":["ttdevasthanams.ap.gov.in"],"paths":["/booking-details","/home/dashboard"]},
+  "variables":{"booking.date":"","booking.slot":""},
+  "steps":[{"id":"queue.wait","name":"Wait for booking UI","action":{"type":"wait_for_element","selector":[{"kind":"text","value":"Special Entry Darshan","priority":1}],"timeoutMs":10000,"failureMode":"manual"}}],
+  "safety":{"stopBeforePayment":true}
+}
