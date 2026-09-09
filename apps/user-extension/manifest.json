@@ -4,7 +4,7 @@
   "version":"0.2.0",
   "description":"Runs versioned booking flows with automatic execution, verification, manual takeover and local timing telemetry.",
   "permissions":["storage","tabs"],
-  "host_permissions":["https://ttdevasthanams.ap.gov.in/*","https://raw.githubusercontent.com/ravitejakamalapuram/ttd-booking-flow-engine/*"],
+  "host_permissions":["https://ttdevasthanams.ap.gov.in/*","https://raw.githubusercontent.com/*"],
   "action":{"default_popup":"popup.html"},
   "background":{"service_worker":"background.js","type":"module"},
   "content_scripts":[{"matches":["https://ttdevasthanams.ap.gov.in/*"],"js":["flow.js","content.js"],"run_at":"document_idle"}]
