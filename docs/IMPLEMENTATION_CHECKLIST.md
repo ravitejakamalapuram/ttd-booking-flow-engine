@@ -54,7 +54,7 @@ This document is the source-of-truth implementation plan for Codex and future co
 
 ## Phase 1 — Flow authoring and validation
 
-### [ ] 1.1 Production-grade recorder
+### [x] 1.1 Production-grade recorder
 **Target:** Turn the MVP recorder into a reliable authoring tool.
 
 Requirements:
@@ -68,6 +68,8 @@ Requirements:
 - Make recordings deterministic and editable before generation.
 
 **Done when:** a normal booking interaction can be recorded repeatedly without duplicate/noisy events and produces a reviewable flow draft.
+
+**Implemented:** the admin recorder now owns and cleans up all page interaction listeners and SPA history hooks, records sanitized navigation transitions, generates prioritized selector candidates, captures form metadata/options/state, coalesces input/change events, and redacts sensitive field values. Recordings receive deterministic authoring IDs and remain editable JSON before flow generation. Generated flows keep sensitive fields as manual checkpoints. A root `package-lock.json` was also added so the existing CI npm cache configuration can initialize reliably.
 
 ### [ ] 1.2 Flow editor
 **Target:** Let an admin inspect and edit generated steps before saving/publishing.
