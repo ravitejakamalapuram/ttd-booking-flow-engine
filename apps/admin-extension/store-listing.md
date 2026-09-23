@@ -4,7 +4,7 @@
 - **Summary:** Authoring and recording companion tool to author, inspect, and export versioned booking workflows from live DOM.
 - **Category:** Developer Tools
 - **Language:** English
-- **Privacy policy URL:** https://session-bridge-4.preview.emergentagent.com/privacy
+- **Privacy policy URL:** https://ravitejakamalapuram.github.io/booking-flow-recorder.html
 
 **Description:**
 Booking Flow Admin Recorder is a developer and administrative workflow authoring tool. It allows workflow creators to inspect live web page elements, record user action sequences, validate selector resilience, and author structured, versioned workflow definitions directly from the browser.

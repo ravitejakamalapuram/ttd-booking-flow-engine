@@ -4,7 +4,7 @@
 - **Summary:** Versioned booking workflow runner with automated execution, step verification, manual takeover, and telemetry.
 - **Category:** Developer Tools
 - **Language:** English
-- **Privacy policy URL:** https://session-bridge-4.preview.emergentagent.com/privacy
+- **Privacy policy URL:** https://ravitejakamalapuram.github.io/booking-flow-runner.html
 
 **Description:**
 Booking Flow Runner is an automated workflow execution and verification assistant designed to streamline booking procedures on verified portals. It runs validated, versioned action sequences with real-time DOM step checks, smooth manual takeover capabilities, and detailed local timing telemetry.
