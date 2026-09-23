@@ -8,7 +8,7 @@ You are taking over implementation of this repository. The project history was d
 2. Read `docs/IMPLEMENTATION_CHECKLIST.md` completely.
 3. Inspect the current source tree before changing anything.
 4. Check the latest GitHub Actions status for the current default branch.
-5. Inspect `ravitejakamalapuram/.github-workflows-shared` before changing CI/CD.
+5. Inspect `ravitejakamalapuram/release-platform` (CI via `app-ci.yml@v2`, configured by `release.yaml`) before changing CI/CD.
 
 ## Mission
 

@@ -407,8 +407,10 @@ Include:
 
 ## Phase 8 — CI/CD and repository engineering
 
-### [ ] 8.1 Shared workflow integration
-**Target:** Integrate this repository with `ravitejakamalapuram/.github-workflows-shared` wherever the shared workflows are applicable.
+### [x] 8.1 Shared workflow integration
+**Target:** Integrate this repository with the shared release platform (`ravitejakamalapuram/release-platform`) wherever it applies.
+
+Done: `.github/workflows/ci.yml` calls `release-platform/.github/workflows/app-ci.yml@v2`, configured by `release.yaml` (test gate + both chrome targets). No release caller exists while the project is parked.
 
 Requirements:
 - Inspect the shared-workflows repository before integration.
