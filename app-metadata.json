@@ -1,0 +1,61 @@
+{
+  "appName": "TTD Booking Flow Engine",
+  "appType": "multi-module",
+  "repoName": "ttd-booking-flow-engine",
+  "description": "Versioned booking-flow engine with two Chrome extensions: Booking Flow Runner (executes and verifies flows) and Booking Flow Admin Recorder (authors flows from the live DOM).",
+  "modules": [
+    {
+      "name": "Booking Flow Runner",
+      "type": "chrome-extension",
+      "path": "apps/user-extension",
+      "status": "draft",
+      "storeId": "nennmopkhanobbppokkcedlebnodlglm",
+      "storeUrl": "https://chromewebstore.google.com/detail/nennmopkhanobbppokkcedlebnodlglm",
+      "developerConsoleUrl": "https://chrome.google.com/webstore/devconsole/9637cb78-fa33-49dd-a4cb-91066ff182e3/nennmopkhanobbppokkcedlebnodlglm",
+      "buildScript": "npm run build",
+      "artifactPath": "dist/user-extension",
+      "cwsListing": {
+        "shortDescription": "Versioned booking workflow runner with automated execution, step verification, manual takeover, and telemetry.",
+        "detailedDescription": "Booking Flow Runner is an automated workflow execution and verification assistant designed to streamline booking procedures on verified portals. It runs validated, versioned action sequences with real-time DOM step checks, smooth manual takeover capabilities, and detailed local timing telemetry.\n\nKEY FEATURES:\n• Automated Step Progression: Executes verified form sequences and navigation steps accurately.\n• Smart Step Verification: Validates DOM readiness and element availability before attempting actions to prevent transient failures.\n• Manual Takeover Mode: Allows seamless pause and manual intervention at any moment during sensitive transaction points.\n• Local Latency Telemetry: Measures round-trip execution and step transition times to optimize performance.\n• 100% Private & Local: No credentials or sensitive data are collected or sent to external analytics servers.\n\nHOW TO USE:\n1. Open the target booking portal in Chrome.\n2. Launch the Booking Flow Runner popup from your toolbar.\n3. Select your desired workflow and initiate the runner.\n4. Monitor live progress, review verification indicators, or take manual control as needed.",
+        "category": "developer-tools",
+        "singlePurpose": "Booking Flow Runner provides step-by-step automated workflow execution, state verification, and local telemetry for authorized booking processes.",
+        "privacyPolicyUrl": "https://ravitejakamalapuram.github.io/booking-flow-runner.html",
+        "remoteCodeUsed": false,
+        "remoteCodeJustification": "The extension does not execute remote code. All scripts are packaged within the extension; any flow definitions fetched are declarative JSON data, not executable code.",
+        "dataUsageCertified": true,
+        "permissionJustifications": {
+          "storage": "Required to persist user preferences, workflow configs, and local execution telemetry directly on device.",
+          "tabs": "Required to identify and coordinate workflow execution state with the active booking tab.",
+          "host_permissions": "Required to inspect DOM element readiness and execute authorized navigation steps on the booking portal."
+        }
+      }
+    },
+    {
+      "name": "Booking Flow Admin Recorder",
+      "type": "chrome-extension",
+      "path": "apps/admin-extension",
+      "status": "draft",
+      "storeId": "njphibicimnehbegefiflolehakkfeii",
+      "storeUrl": "https://chromewebstore.google.com/detail/njphibicimnehbegefiflolehakkfeii",
+      "developerConsoleUrl": "https://chrome.google.com/webstore/devconsole/9637cb78-fa33-49dd-a4cb-91066ff182e3/njphibicimnehbegefiflolehakkfeii",
+      "buildScript": "npm run build",
+      "artifactPath": "dist/admin-extension",
+      "cwsListing": {
+        "shortDescription": "Authoring and recording companion tool to author, inspect, and export versioned booking workflows from live DOM.",
+        "detailedDescription": "Booking Flow Admin Recorder is a developer and administrative workflow authoring tool. It allows workflow creators to inspect live web page elements, record user action sequences, validate selector resilience, and author structured, versioned workflow definitions directly from the browser.\n\nKEY FEATURES:\n• Visual Element Inspector: Highlight and capture robust DOM element selectors in real time.\n• Live Action Recording: Capture input, click, and navigation actions to build repeatable workflow sequences.\n• Step Validation & Testing: Test individual steps against live DOM elements to verify selector reliability before deployment.\n• Structured Export: Export recorded flows into versioned JSON workflows compatible with the Booking Flow Runner engine.\n• Local-First Privacy: All authoring and recorded data remains strictly local in your browser.\n\nHOW TO USE:\n1. Navigate to the target web application page.\n2. Open the Booking Flow Admin Recorder popup.\n3. Click \"Start Recording\" and interact with page elements.\n4. Review captured steps, fine-tune selectors, and export the finished workflow definition.",
+        "category": "developer-tools",
+        "singlePurpose": "Booking Flow Admin Recorder provides a browser-based developer authoring environment to record, inspect, and export versioned workflow definitions from live web DOM elements.",
+        "privacyPolicyUrl": "https://ravitejakamalapuram.github.io/booking-flow-recorder.html",
+        "remoteCodeUsed": false,
+        "remoteCodeJustification": "The extension does not use remote code. All files, scripts, and libraries are packaged locally within the extension ZIP file.",
+        "dataUsageCertified": true,
+        "permissionJustifications": {
+          "storage": "Required to persist recorded workflow draft configurations locally during authoring sessions.",
+          "tabs": "Required to coordinate DOM inspection and recording with the active target browser tab.",
+          "activeTab": "Required to inject temporary recording utilities into the active tab upon user invocation.",
+          "host_permissions": "Required to inspect DOM element attributes and author valid action selectors on the target portal."
+        }
+      }
+    }
+  ]
+}
