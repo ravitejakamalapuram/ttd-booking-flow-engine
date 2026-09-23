@@ -54,7 +54,7 @@ Google review requires specific plain-English justification for each declared pe
   - **Web Page Data & Content**: Collected: Yes | Stored: No | Purpose: Parse and visualize JSON or user-requested data directly within the browser context.
   - **Analytics & Telemetry**: Collected: No | Stored: No | Purpose: None collected.
 
-- **Privacy Policy URL**: https://session-bridge-4.preview.emergentagent.com/privacy
+- **Privacy Policy URL**: `https://ravitejakamalapuram.github.io/booking-flow-recorder.html`
 
 ---
 
