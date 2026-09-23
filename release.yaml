@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ravitejakamalapuram/release-platform/main/schema/release.schema.json
+# Release contract for ravitejakamalapuram/release-platform@v2 (keyless Chrome Web Store publishing).
+#
+# PARKED (ToS risk): only the PR checks (.github/workflows/ci.yml -> app-ci.yml) use this file.
+# There is deliberately no release.yml caller workflow; add one from
+# release-platform/templates/release-caller.yml only once the project is un-parked.
+app: ttd-booking-flow-engine
+# `npm run build` copies both apps to dist/ and asserts they are MV3.
+test: npm ci && npm test && npm run typecheck && npm run build
+targets:
+  - type: chrome
+    item_id: nennmopkhanobbppokkcedlebnodlglm # Booking Flow Runner
+    path: apps/user-extension
+    node: "20"
+  - type: chrome
+    item_id: njphibicimnehbegefiflolehakkfeii # Booking Flow Admin Recorder
+    path: apps/admin-extension
+    node: "20"
